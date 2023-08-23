@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-void main() => runApp(MaterialApp(home: thirdMain()));
+void main() => runApp(const MaterialApp(home: thirdMain()));
 
 class thirdMain extends StatefulWidget {
-  thirdMain({Key? key}) : super(key: key);
+  const thirdMain({Key? key}) : super(key: key);
 
   @override
   State<thirdMain> createState() => _thirdMainState();
 }
 
 class _thirdMainState extends State<thirdMain> {
+  final PageController _pagecontroller = PageController(
+    initialPage: 0,
+    keepPage: true,
+  );
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -18,12 +24,12 @@ class _thirdMainState extends State<thirdMain> {
       body: SafeArea(
         child: SingleChildScrollView(
             child: Padding(
-          padding: EdgeInsets.all(30),
+          padding: const EdgeInsets.all(30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                       text: 'Good Morning ,',
                       style: TextStyle(
                         fontSize: 20,
@@ -41,7 +47,7 @@ class _thirdMainState extends State<thirdMain> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
                 child: RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                         text: 'Find,',
                         style: TextStyle(
                           fontSize: 20,
@@ -67,14 +73,14 @@ class _thirdMainState extends State<thirdMain> {
                           ))
                     ])),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Container(
                   height: size.height * 0.25,
                   width: size.width,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: Color.fromARGB(154, 214, 242, 89),
-                      boxShadow: [
+                      color: const Color.fromARGB(154, 214, 242, 89),
+                      boxShadow: const [
                         BoxShadow(
                             blurRadius: 20,
                             spreadRadius: 3,
@@ -83,14 +89,14 @@ class _thirdMainState extends State<thirdMain> {
                       ]),
                   child: Padding(
                     padding: const EdgeInsets.all(30.0),
-                    child: Container(
+                    child: SizedBox(
                       height: size.height,
                       width: size.width,
                       child: Stack(
                         children: [
                           Positioned(
                               right: size.width * 0.01,
-                              child: Image(
+                              child: const Image(
                                 image: AssetImage('assets/Burger.png'),
                                 fit: BoxFit.contain,
                                 height: 145,
@@ -99,7 +105,7 @@ class _thirdMainState extends State<thirdMain> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               RichText(
-                                  text: TextSpan(
+                                  text: const TextSpan(
                                       text: '\nARTICLE\n',
                                       style: TextStyle(
                                         fontSize: 12,
@@ -118,17 +124,17 @@ class _thirdMainState extends State<thirdMain> {
                               TextButton(
                                   onPressed: (() {}),
                                   style: TextButton.styleFrom(
-                                      padding: EdgeInsets.all(10.0),
+                                      padding: const EdgeInsets.all(10.0),
                                       foregroundColor: Colors.black,
                                       backgroundColor: Colors.blue),
-                                  child: Text('Read Now >'))
+                                  child: const Text('Read Now >'))
                             ],
                           ),
                         ],
                       ),
                     ),
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
@@ -136,8 +142,8 @@ class _thirdMainState extends State<thirdMain> {
                 width: size.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: Color.fromARGB(255, 58, 239, 139),
-                    boxShadow: [
+                    color: const Color.fromARGB(255, 58, 239, 139),
+                    boxShadow: const [
                       BoxShadow(
                           blurRadius: 20,
                           spreadRadius: 3,
@@ -146,7 +152,7 @@ class _thirdMainState extends State<thirdMain> {
                     ]),
                 child: Stack(
                   children: [
-                    Positioned(
+                    const Positioned(
                         child: Image(
                       image: AssetImage(
                         'assets/Subtract.png',
@@ -158,7 +164,7 @@ class _thirdMainState extends State<thirdMain> {
                         left: size.width * 0.08,
                         child: Row(
                           children: [
-                            Text(
+                            const Text(
                               'Add your meal \ndetails',
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.bold),
@@ -169,11 +175,11 @@ class _thirdMainState extends State<thirdMain> {
                             TextButton(
                                 onPressed: (() {}),
                                 style: TextButton.styleFrom(
-                                    padding: EdgeInsets.all(10.0),
+                                    padding: const EdgeInsets.all(10.0),
                                     foregroundColor: Colors.black,
-                                    backgroundColor:
-                                        Color.fromARGB(255, 251, 252, 253)),
-                                child: Text(
+                                    backgroundColor: const Color.fromARGB(
+                                        255, 251, 252, 253)),
+                                child: const Text(
                                   'Add Now >',
                                   style: TextStyle(
                                       color: Colors.green,
@@ -184,7 +190,7 @@ class _thirdMainState extends State<thirdMain> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
@@ -192,8 +198,8 @@ class _thirdMainState extends State<thirdMain> {
                 width: size.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: Color.fromARGB(255, 58, 239, 139),
-                    boxShadow: [
+                    color: const Color.fromARGB(255, 58, 239, 139),
+                    boxShadow: const [
                       BoxShadow(
                           blurRadius: 20,
                           spreadRadius: 3,
@@ -202,7 +208,7 @@ class _thirdMainState extends State<thirdMain> {
                     ]),
                 child: Stack(
                   children: [
-                    Positioned(
+                    const Positioned(
                         child: Image(
                       image: AssetImage(
                         'assets/Subtract.png',
@@ -214,7 +220,7 @@ class _thirdMainState extends State<thirdMain> {
                         left: size.width * 0.08,
                         child: Row(
                           children: [
-                            Text(
+                            const Text(
                               'Track your \nProgress',
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.bold),
@@ -225,11 +231,11 @@ class _thirdMainState extends State<thirdMain> {
                             TextButton(
                                 onPressed: (() {}),
                                 style: TextButton.styleFrom(
-                                    padding: EdgeInsets.all(10.0),
+                                    padding: const EdgeInsets.all(10.0),
                                     foregroundColor: Colors.black,
-                                    backgroundColor:
-                                        Color.fromARGB(255, 251, 252, 253)),
-                                child: Text(
+                                    backgroundColor: const Color.fromARGB(
+                                        255, 251, 252, 253)),
+                                child: const Text(
                                   'View Now >',
                                   style: TextStyle(
                                       color: Colors.green,
@@ -240,7 +246,7 @@ class _thirdMainState extends State<thirdMain> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
@@ -248,8 +254,8 @@ class _thirdMainState extends State<thirdMain> {
                 width: size.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: Color.fromARGB(255, 58, 239, 139),
-                    boxShadow: [
+                    color: const Color.fromARGB(255, 58, 239, 139),
+                    boxShadow: const [
                       BoxShadow(
                           blurRadius: 20,
                           spreadRadius: 3,
@@ -258,7 +264,7 @@ class _thirdMainState extends State<thirdMain> {
                     ]),
                 child: Stack(
                   children: [
-                    Positioned(
+                    const Positioned(
                         child: Image(
                       image: AssetImage(
                         'assets/Subtract.png',
@@ -270,7 +276,7 @@ class _thirdMainState extends State<thirdMain> {
                         left: size.width * 0.08,
                         child: Row(
                           children: [
-                            Text(
+                            const Text(
                               'Manage your \nMedication',
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.bold),
@@ -281,11 +287,11 @@ class _thirdMainState extends State<thirdMain> {
                             TextButton(
                                 onPressed: (() {}),
                                 style: TextButton.styleFrom(
-                                    padding: EdgeInsets.all(10.0),
+                                    padding: const EdgeInsets.all(10.0),
                                     foregroundColor: Colors.black,
-                                    backgroundColor:
-                                        Color.fromARGB(255, 251, 252, 253)),
-                                child: Text(
+                                    backgroundColor: const Color.fromARGB(
+                                        255, 251, 252, 253)),
+                                child: const Text(
                                   'Manage Now >',
                                   style: TextStyle(
                                       color: Colors.green,
@@ -296,16 +302,62 @@ class _thirdMainState extends State<thirdMain> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              Text(
+              const Text(
                 'Choose Your Favourites',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SmoothPageIndicator(
+                    controller: _pagecontroller,
+                    count: 3,
+                    axisDirection: Axis.horizontal,
+                    effect: const WormEffect(
+                        spacing: 8.0,
+                        radius: 10.0,
+                        dotWidth: 20.0,
+                        dotHeight: 12.0,
+                        dotColor: Color.fromARGB(255, 162, 173, 182),
+                        activeDotColor: Color.fromARGB(196, 28, 79, 37)),
+                    onDotClicked: (index) => {},
+                  ),
+                ],
+              ),
+              const SizedBox(height: 30),
+              // Row(
+              //   children: [
+              //     PageView(
+              //       children: const [
+              //         // page1(),
+              //         // page2(),
+              //         // page 3(),
+              //       ],
+              //     ),
+              //   ],
+              // )
+              // Row(
+              //   children: [
+              //     Expanded(
+              //       flex: 1,
+              //       child: Container(
+              //         color: Colors.amber,
+              //         height: 100,
+              //       ),
+              //     ),
+              //     Container(
+              //       color: Colors.blue,
+              //       height: 100,
+              //       width: 100,
+              //     ),
+              //   ],
+              // )
             ],
           ),
         )),
