@@ -47,6 +47,7 @@ class _OtpState extends State<Otp> {
                 controller: otpController,
                 otpFieldStyle: OtpFieldStyle(
                     backgroundColor: const Color.fromARGB(255, 252, 251, 251),
+                    borderColor: Colors.blue
                   ),
                 length: 4,
                 width: MediaQuery.of(context).size.width * 0.75,
